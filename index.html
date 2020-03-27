@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Puzz Grid</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+
+            font-size: 5em;
+            font-family: sans-serif;
+            text-align: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="http://" target="_blank" rel="noopener noreferrer">Give me a random Puzz Grid</a>
+
+    <script>
+        function getRandomLink() {
+            const randomNumber = Math.floor(Math.random() * 27437) + 1;
+            return `https://puzzgrid.com/grid/${randomNumber}`
+        }
+
+        function clickLink() {
+            const link = getRandomLink();
+            this.setAttribute('href', link);
+        }
+
+        document.querySelector('a').addEventListener('click', clickLink);
+        clickLink();
+    </script>
+</body>
+
+</html>
